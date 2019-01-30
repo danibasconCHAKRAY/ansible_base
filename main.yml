@@ -1,0 +1,5 @@
+---
+- name: role
+  hosts: all
+  roles:
+    - role: name.role
