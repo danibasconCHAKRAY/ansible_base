@@ -1,0 +1,6 @@
+roles/*
+.packages
+**/*.pyc
+**/__pycache__
+main.retry
+.vagrant/

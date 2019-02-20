@@ -15,10 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 #  config.vm.box = "bento/ubuntu-16.04"
 #  config.vm.box = "geerlingguy/debian8"
 
-  config.vm.define "testlink", primary: true do |testlink|
-     config.vm.hostname = "testlink"
-     testlink.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-     testlink.vm.provider :esxi do |lb|
+  config.vm.define "danijenkins", primary: true do |danijenkins|
+     config.vm.hostname = "danijenkins"
+     danijenkins.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+     danijenkins.vm.provider :esxi do |lb|
        lb.memory = 1024
      end
  end
@@ -27,10 +27,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #
     #   Provider settings
     #
-    esxi.esxi_hostname = 'main-srv1.chakray.local'
+    esxi.esxi_hostname = 'ip'
     esxi.esxi_username = 'vagrant'
-    esxi.esxi_password = 'env:'
-    esxi.esxi_virtual_network = 'VM Network'
+    esxi.esxi_password = 'passwordd'
+    esxi.esxi_virtual_network = 'red'
+    esxi.esxi_disk_store = "volumen"
   end
 end
 
